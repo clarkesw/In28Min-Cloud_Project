@@ -33,9 +33,17 @@ public class ConversionInfo {
         this.port = port;
         this.quantity = quantity;
         this.conversionFactor = conversionFactor;
-        this.totalAmount = totalAmount;
         this.fromCurrency = fromCurrency;
         this.toCurrency = toCurrency;
+        
+        if(totalAmount != null){
+            this.totalAmount = totalAmount;
+        }else{
+            BigDecimal quanBD = new BigDecimal(quantity);
+            this.totalAmount = quanBD.multiply(conversionFactor);
+        }   
+        
+        System.out.println("Construtor Call: " + this.toString()); 
     }
 
     public Integer getPort() {
@@ -51,9 +59,8 @@ public class ConversionInfo {
     }
 
     public void setTotalAmount(BigDecimal totalAmount) {
-        this.totalAmount = totalAmount;
+        this.totalAmount = totalAmount;  
     }
-
 
     public int getId() {
         return id;
