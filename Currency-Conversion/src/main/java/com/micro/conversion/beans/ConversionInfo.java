@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.micro.conversion.beans;
 
 import java.math.BigDecimal;
@@ -42,8 +38,6 @@ public class ConversionInfo {
             BigDecimal quanBD = new BigDecimal(quantity);
             this.totalAmount = quanBD.multiply(conversionFactor);
         }   
-        
-        System.out.println("Construtor Call: " + this.toString()); 
     }
 
     public Integer getPort() {
