@@ -1,8 +1,8 @@
 package com.micro.exchange.controller;
 
+import static com.micro.exchange.AppConstants.APP_ID;
 import com.micro.exchange.beans.ExchangeValue;
 import com.micro.exchange.repository.ExchangeRateRepo;
-import java.math.BigDecimal;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,12 +25,12 @@ public class ExchangeController {
     
     @GetMapping("/currency-exchange/from/{from}/to/{to}")
     public ExchangeValue getExchangeValue(@PathVariable String from, @PathVariable String to){
-        logger.info("GET /currency-exchange/from/{from}/to/{to} ");
+        //int port = Integer.parseInt(env.getProperty("server.port"));
+        logger.info("GET " + APP_ID + "/currency-exchange/from/{from}/to/{to} ");
         
         ExchangeValue exchangeInfo = repo.findByFromCurrencyAndToCurrency(from, to);
         
-        logger.info("\tDid we make it?");
-        return new ExchangeValue(exchangeInfo.getId(), exchangeInfo.getPort(), 
+        return new ExchangeValue(exchangeInfo.getId(), APP_ID, 
                                 exchangeInfo.getConversionFactor(), from, to);
     }
 }

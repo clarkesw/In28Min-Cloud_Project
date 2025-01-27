@@ -1,9 +1,9 @@
 package com.micro.exchange.beans;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import java.math.BigDecimal;
 
 @Entity
@@ -12,7 +12,8 @@ public class ExchangeValue {
     
     @Id
     private int id;
-    @Column(nullable = true)
+
+    @Transient
     private Integer port;
     private BigDecimal conversionFactor;
     private String fromCurrency;
@@ -27,15 +28,9 @@ public class ExchangeValue {
         this.fromCurrency = exchangeInfo.getFrom();
         this.toCurrency = exchangeInfo.getTo();
     }
-        
-    public ExchangeValue(int id, BigDecimal conversionFactor, String from, String to) {
-        this.id = id;
-        this.conversionFactor = conversionFactor;
-        this.fromCurrency = from;
-        this.toCurrency = to;
-    }
 
     public ExchangeValue(int id, Integer port, BigDecimal conversionFactor, String from, String to) {
+//        System.out.println("Port: " + port);
         this.id = id;
         this.port = port;
         this.conversionFactor = conversionFactor;
