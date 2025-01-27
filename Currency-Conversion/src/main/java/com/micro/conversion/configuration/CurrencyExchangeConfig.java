@@ -10,12 +10,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
-@Configuration
+//@Configuration
 public class CurrencyExchangeConfig {
     
-    @Bean
-    @Primary
-    public ServiceInstanceListSupplier serviceInstanceList() {
-        return new ExchangeInstanceSupplier();
-    }
+//    @Bean
+//    @Primary
+//    public ServiceInstanceListSupplier serviceInstanceList() {
+//        return new ExchangeInstanceSupplier();
+//    }
 }
