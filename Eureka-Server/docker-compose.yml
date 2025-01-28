@@ -1,0 +1,11 @@
+## YAML Template.
+---
+version: "3.7"
+
+name: eureka-naming-server
+
+services:
+  micro_service:
+    image: clarkesw/naming-server:0.0.4-SNAPSHOT
+    ports:
+      - "8761:8761"

@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
         <action>
+            <actionName>build</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>spring-boot:build-image</goal>
+                <goal>-DskipTests</goal>
+            </goals>
+        </action>
+        <action>
             <actionName>run</actionName>
             <packagings>
                 <packaging>jar</packaging>
@@ -13,7 +23,7 @@
                 <exec.vmArgs></exec.vmArgs>
                 <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
                 <exec.appArgs></exec.appArgs>
-                <exec.mainClass>com.clarke.micro.config.ConfigServerApplication</exec.mainClass>
+                <exec.mainClass>com.micro.eureka.NamingServerApplication</exec.mainClass>
                 <exec.executable>java</exec.executable>
             </properties>
         </action>
@@ -30,7 +40,7 @@
                 <exec.vmArgs>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address}</exec.vmArgs>
                 <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
                 <exec.appArgs></exec.appArgs>
-                <exec.mainClass>com.clarke.micro.config.ConfigServerApplication</exec.mainClass>
+                <exec.mainClass>com.micro.eureka.NamingServerApplication</exec.mainClass>
                 <exec.executable>java</exec.executable>
                 <jpda.listen>true</jpda.listen>
             </properties>
@@ -47,19 +57,9 @@
             <properties>
                 <exec.vmArgs></exec.vmArgs>
                 <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
-                <exec.mainClass>com.clarke.micro.config.ConfigServerApplication</exec.mainClass>
+                <exec.mainClass>com.micro.eureka.NamingServerApplication</exec.mainClass>
                 <exec.executable>java</exec.executable>
                 <exec.appArgs></exec.appArgs>
             </properties>
-        </action>
-        <action>
-            <actionName>build</actionName>
-            <packagings>
-                <packaging>*</packaging>
-            </packagings>
-            <goals>
-                <goal>spring-boot:build-image</goal>
-                <goal>-DskipTests</goal>
-            </goals>
         </action>
     </actions>

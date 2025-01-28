@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  docker-in-docker:
+    image: docker:latest
+    privileged: true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "2375:2375" 
