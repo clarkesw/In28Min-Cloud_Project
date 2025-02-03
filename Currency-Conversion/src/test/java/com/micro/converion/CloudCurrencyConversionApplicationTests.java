@@ -8,8 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 @Disabled("Not working")
 class CloudCurrencyConversionApplicationTests {
 
-	@Test     
-	void contextLoads() {
-	}
-
+    @Test
+    void contextLoads() {}
 }
