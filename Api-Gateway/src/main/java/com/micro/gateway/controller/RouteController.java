@@ -10,9 +10,14 @@ import reactor.core.publisher.Mono;
 
 @RestController
 public class RouteController {
-    
+
     @Autowired
     private DiscoveryClient discoveryClient;
+
+    @GetMapping("/")
+    public String getAnyThing() {
+        return "Base Route";
+    }
 
     @GetMapping("/services")
     public List<String> getServices() {

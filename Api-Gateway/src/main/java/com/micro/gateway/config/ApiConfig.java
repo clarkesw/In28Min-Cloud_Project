@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ApiConfig {
-    
+
     private final String conversionUri = "lb://" + "CURRENCY-CONVERSION";
 
     @Bean
