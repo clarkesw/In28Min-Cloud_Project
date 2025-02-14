@@ -5,12 +5,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 @ConfigurationProperties(prefix = "limits-service") 
-public class Configuration {
+public class LimitsConfig {
     
     private int min;
     private int max;
 
-    public Configuration() {}
+    public LimitsConfig() {}
 
     public int getMin() {
         return min;
