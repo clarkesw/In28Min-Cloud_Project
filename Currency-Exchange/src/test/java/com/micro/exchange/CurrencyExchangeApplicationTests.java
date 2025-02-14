@@ -8,8 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @Disabled("Not working")
 class CurrencyExchangeApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
-
+    @Test
+    void contextLoads() {
+    }
 }
