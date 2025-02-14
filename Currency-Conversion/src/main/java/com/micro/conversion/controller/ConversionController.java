@@ -22,7 +22,7 @@ public class ConversionController {
     @Autowired
     private DiscoveryClient client;
     
-    private final String pathFeign = "/currency-conversion-feign/from/{from}/to/{to}/quantity/{quantity}";
+    private final String pathFeign = "/currency-conversion/from/{from}/to/{to}/quantity/{quantity}";
     private final Logger logger = LoggerFactory.getLogger(ConversionController.class);
     private final Counter conversionRequests;
 

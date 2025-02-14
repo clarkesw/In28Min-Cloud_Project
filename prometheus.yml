@@ -1,0 +1,4 @@
+scrape_configs:
+  - job_name: 'in28min-currency-app'
+    static_configs:
+      - targets: ['localhost:8100']
