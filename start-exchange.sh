@@ -33,3 +33,5 @@ done
 trap "kill $process_1_pid; kill $process_2_pid; echo 'Shutting down...'; exit" INT
 
 echo "Script finished." # This will only be reached if you use Option 3 or comment out the while loop/sleep.
+
+# Useless commit for no reason

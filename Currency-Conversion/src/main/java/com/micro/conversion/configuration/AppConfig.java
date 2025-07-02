@@ -16,4 +16,9 @@ public class AppConfig {
                 .readTimeout(Duration.ofMillis(3000))
                 .build();
     }
+    
+    @Bean
+    public RestTemplateBuilder restTemplateBuilder() {
+        return new RestTemplateBuilder();
+    }
 }
